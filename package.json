@@ -1,16 +1,14 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
+  "name": "FortVa",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "description": "O Bot feito para tudo e todos!",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "discord.js": "^12.2.0"
   },
   "engines": {
     "node": "12.x"

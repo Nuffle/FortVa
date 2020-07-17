@@ -46,8 +46,9 @@ client.on("guildMemberAdd", async (member) => {
       .setAuthor(member.user.tag, member.user.displayAvatarURL())
       .setTitle(` Boas-vindas `)
       .setImage("https://i.postimg.cc/MKBTdMTx/7e9d86951050ce0953894254583fca6d.png")
-      .setDescription(`**${member.user}**, bem-vindo(a) ao servidor **${guild.name}**!       
-      Atualmente estamos com **${member.guild.memberCount} membros**, divirta-se conosco! :heart:`)
+      .setDescription(`**${member.user}**, bem-vindo(a) ao servidor **${guild.name}**!    
+
+      .addField(Atualmente estamos com **${member.guild.memberCount} membros**, divirta-se conosco! :heart:`)
       .addField('Canais', 'Siga as regras e evite ser Banido! <#671462522716422147> ')
       .setThumbnail(member.user.displayAvatarURL({ dynamic: true, format: "png", size: 1024 }))
       .setFooter("Código de Nuffle")

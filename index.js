@@ -76,7 +76,8 @@ console.log("Estou Online!")
 });
 
 import discord
-client = discord.Client()
+// VOCÊ PRECISA DO YOUTUBE-DL INSTALADO, PARA ISSO DIGITE "pip install youtube_dl" NO CMD!
+client = discord.Client('NzMzNzE1MzIxMjc3NjQ0ODkw.XxHd-A.CMn3jD2Vstpw7YJVUpSpZslELBw');
 
 players = {}
 COR = 0xF7FE2E

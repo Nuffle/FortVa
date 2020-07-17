@@ -18,7 +18,16 @@ if (message.channel.type === "dm")  return;
 if (!message.content.startsWith(config.prefix))  return;
 if (message.content.startsWith('<@!${client.user.id}') || message.content.startsWith('<@${client.user.id}'))  return;
   
-let args = message.content  
-})
+let args = message.content.split(" ").slice(1);
+let command = message.content.split(" ")[0];
+command = command.slice(config.prefix.length);
+try {
+  let commandFile = require('./commands/${command}.js');
+  delete require.cache[require.resolve('./commands/${command}.js')];
+  return commandFile.run(client, message, args);
+} catch (err) {
+  console.error("Erro:" + err);
+}  
+});
 
 client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token

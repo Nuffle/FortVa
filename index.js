@@ -48,7 +48,7 @@ client.on("guildMemberAdd", async (member) => {
       .setImage("https://i.postimg.cc/MKBTdMTx/7e9d86951050ce0953894254583fca6d.png")
       .setDescription(`**${member.user}**, bem-vindo(a) ao servidor **${guild.name}**!    
 
-      .addField(Atualmente estamos com **${member.guild.memberCount} membros**, divirta-se conosco! :heart:`)
+      Atualmente estamos com **${member.guild.memberCount} membros**, divirta-se conosco! :heart:`)
       .addField('Canais', 'Siga as regras e evite ser Banido! <#671462522716422147> ')
       .setThumbnail(member.user.displayAvatarURL({ dynamic: true, format: "png", size: 1024 }))
       .setFooter("Código de Nuffle")
@@ -58,5 +58,21 @@ client.on("guildMemberAdd", async (member) => {
   }
 });
 
+client.on("ready", () => {
+  let activities = [
+      `Utilize ${config.prefix}help para obter ajuda`,
+      `${client.guilds.cache.size} servidores!`,
+      `${client.channels.cache.size} canais!`,
+      `${client.users.cache.size} usuários!`
+    ],
+    i = 0;
+  setInterval( () => client.user.setActivity(`${activities[i++ % activities.length]}`, {
+        type: "WATCHING"
+      }), 1000 * 60); 
+  client.user
+      .setStatus("dnd")
+      .catch(console.error);
+console.log("Estou Online!")
+});
 
 client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token

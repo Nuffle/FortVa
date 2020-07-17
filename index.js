@@ -33,5 +33,27 @@ client.on('message', message => {
   }
 });
 
+client.on("guildMemberAdd", async (member) => { 
+
+  let guild = await client.guilds.cache.get("665379261976281130");
+  let channel = await client.channels.cache.get("671462517524135975");
+  let emoji = await member.guild.emojis.cache.find(emoji => emoji.name === "hey");
+  if (guild != member.guild) {
+    return console.log("Sem boas-vindas pra você! Sai daqui saco pela.");
+   } else {
+      let embed = await new Discord.MessageEmbed()
+      .setColor("#7c2ae8")
+      .setAuthor(member.user.tag, member.user.displayAvatarURL())
+      .setTitle(`${emoji} Boas-vindas ${emoji}`)
+      .setImage("https://imgur.com/3vYVlHb.gif")
+      .setDescription(`**${member.user}**, bem-vindo(a) ao servidor **${guild.name}**! Atualmente estamos com **${member.guild.memberCount} membros**, divirta-se conosco! :heart:`)
+      .addField('Canais', 'Siga as regras ')
+      .setThumbnail(member.user.displayAvatarURL({ dynamic: true, format: "png", size: 1024 }))
+      .setFooter("Código de Nuffle")
+      .setTimestamp();
+
+    channel.send(embed);
+  }
+});
 
 client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token

@@ -18,13 +18,13 @@ message.channel.send(`${message.author.username} **acaba de beijar** ${user.user
 */
 let avatar = message.author.displayAvatarURL({format: 'png'});
   const embed = new Discord.MessageEmbed()
-        .setTitle('Kiss')
+        .setTitle('Beijo <3')
         .setColor('#000000')
         .setDescription(`${message.author} acaba de beijar ${user}`)
         .setImage(rand)
         .setTimestamp()
         .setThumbnail(avatar)
-        .setFooter('Kissu kissu kissu')
+        .setFooter('snac snac snac')
         .setAuthor(message.author.tag, avatar);
   await message.channel.send(embed);
 }

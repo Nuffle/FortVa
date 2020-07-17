@@ -60,7 +60,7 @@ client.on("guildMemberAdd", async (member) => {
 
 client.on("ready", () => {
   let activities = [
-      `Criador, Nuffle =D`,
+      `Bot Brasileiro criado por Nuffle! =D`,
       `${client.guilds.cache.size} servidores!`,
       `${client.channels.cache.size} canais!`,
       `${client.users.cache.size} usuários!`

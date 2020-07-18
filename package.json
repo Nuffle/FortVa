@@ -1,7 +1,7 @@
 {
   "name": "FortVa",
   "version": "0.0.1",
-  "description": "O Bot feito para tudo e todos!",
+  "description": "O Bot Brasileiro feito para tudo e todos!",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
